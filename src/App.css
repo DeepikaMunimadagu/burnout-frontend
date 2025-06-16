@@ -5,13 +5,13 @@
 }
 
 .day-bg {
-  background-image: url('D:\Burnout_Prediction\burnout-frontend\public\grass-bg.png');
+  background-image: url('/grass-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .night-bg {
-  background-image: url('D:\Burnout_Prediction\burnout-frontend\public\end-bg.png');
+  background-image: url('/end-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
