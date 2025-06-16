@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.day-bg {
+  background-image: url('D:\Burnout_Prediction\burnout-frontend\src\grass-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.night-bg {
+  background-image: url('D:\Burnout_Prediction\burnout-frontend\src\end-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.glass-container {
+  background: rgba(255, 255, 255, 0.85);
+  border: 4px solid #2f2f2f;
+}
+
+.pixel-input {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #444;
+  background-color: #eee;
+  font-family: 'Press Start 2P';
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.minecraft-btn {
+  background-color: #3d7e3a;
   color: white;
+  font-family: 'Press Start 2P';
+  padding: 12px;
+  width: 100%;
+  border: 3px solid #000;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.minecraft-btn:hover {
+  background-color: #2f6e2c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.minecraft-btn-small {
+  font-family: 'Press Start 2P';
+  padding: 8px 12px;
+  border: 2px solid #000;
+  background: #3d7e3a;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.xp-bar {
+  width: 100%;
+  height: 20px;
+  border: 2px solid #000;
+  background: #ccc;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 0%;
+  animation: fillXP 2s forwards;
+}
+
+.bg-green-600 {
+  background: #00ff00;
+}
+
+.bg-red-600 {
+  background: #ff5555;
+}
+
+@keyframes fillXP {
+  0% { width: 0%; }
+  100% { width: 100%; }
 }
