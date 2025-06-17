@@ -4,14 +4,8 @@
   font-family: 'Press Start 2P', cursive;
 }
 
-.day-bg {
-  background-image: url('/grass-bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
+.day-bg,
 .night-bg {
-  background-image: url('/end-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
