@@ -1,14 +1,21 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+  useLocation,
+  Link,
+} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageWrapper from "./PageWrapper";
 import LoadingSpinner from "./LoadingSpinner";
-import Dashboard from "./Dashboard";
 
-// Lazy load components
+// Lazy-loaded components
 const PredictorForm = lazy(() => import("./PredictorForm"));
 const Leaderboard = lazy(() => import("./Leaderboard"));
-const NotFound = lazy(() => import("./NotFound")); // You'll create this next
+const Dashboard = lazy(() => import("./Dashboard"));
+const NotFound = lazy(() => import("./NotFound")); // Optional: Custom 404 page
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -33,6 +40,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/dashboard"
+          element={
+            <PageWrapper>
+              <Dashboard />
+            </PageWrapper>
+          }
+        />
+        <Route
           path="*"
           element={
             <PageWrapper>
@@ -40,7 +55,6 @@ function AnimatedRoutes() {
             </PageWrapper>
           }
         />
-        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </AnimatePresence>
   );
@@ -74,7 +88,9 @@ function App() {
           >
             🏆 Leaderboard
           </NavLink>
-          <Link to="/dashboard" className="px-3">Dashboard</Link>
+          <Link to="/dashboard" className="hover:text-yellow-300 transition">
+            📊 Dashboard
+          </Link>
         </div>
       </nav>
 
